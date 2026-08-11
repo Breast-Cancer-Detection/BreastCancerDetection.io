@@ -1,4 +1,4 @@
-# (UPDATE IN README.md) Project Title
+# Breast Cancer Detection
 
 (UPDATE IN README.md)
 Briefly describe the purpose/result(s) of your project, the skills you applied, and the AI4ALL Ignite program.
