@@ -34,7 +34,14 @@ The four-model ensemble was evaluated on a test set of **400 breast histopatholo
 | **Invasive Carcinoma** | 83.87% | 88.64% | 86.19% | 88 |
 | **Normal** | 82.40% | 98.10% | 89.57% | 105 |
 
-![Confusion Matrix](Final%2018C%20Presentation.png)
+<img src="modelAdd.png" alt="Ensembler" width="500">
+<em>Combining four models raised accuracy from 75% to 86.75%, directly solving our single-model limitation.</em>
+
+<br><br>
+
+<img src="Final%2018C%20Presentation.png" alt="Confusion Matrix" width="500">
+<em>The confusion matrix shows where our deployed ensemble still struggles, guiding where expert review matters most.</em>
+
 ### Key Findings
 
 1. **Achieved 86.75% overall accuracy** across the 400-image test set using the four-model ensemble.
@@ -44,40 +51,55 @@ The four-model ensemble was evaluated on a test set of **400 breast histopatholo
 5. **Macro precision, recall, and F1 remained near 87%**, indicating relatively consistent performance across the four tissue classes.
 
 > **Note:** These results reflect evaluation on the repository's current 400-image test set and do not establish clinical effectiveness.
+
+
 ## Methodologies <!--- do not change this line -->
 
-(UPDATE IN README.md)
+To accomplish this, we developed a full-stack application utilizing a React frontend, a FastAPI backend, and Supabase for secure authentication. For the machine learning pipeline, we utilized transfer learning on ImageNet-pretrained backbones to train four distinct Convolutional Neural Networks (ResNet50, DenseNet121, EfficientNet-B0, and VGG16) using an AdamW optimizer and CrossEntropyLoss. The histology image data was processed by resizing inputs to 224x224 and normalizing them, enabling us to classify tissue into four distinct classes while generating Grad-CAM heatmaps to visually explain the model's decision-making process.
 
-*EXAMPLE:*
-*To accomplish this, we utilized the OpenAI API to interact with ChatGPT, and we designed a custom Python script to generate diverse prompts and collect corresponding responses. The data was then processed and analyzed using pandas, enabling us to detect patterns and biases in the AI model's outputs.*
-*Engineered a Python script to generate over 1,000 prompts and elicit their responses from ChatGPT, utilizing pandas to collect the data. When prompted for solutions to this specific relevant crisis, nearly 80% of ChatGPT's responses promoted a certain worldview.*
+| Hyperparameter | Value |
+| :--- | :--- |
+| Optimizer | AdamW |
+| Learning Rate | 1e-4 |
+| Batch Size | 16 |
+| Epochs | 8 |
+| Loss | CrossEntropyLoss |
+* Engineered a soft-voting ensemble model combining four CNN architectures, which successfully elevated our classification accuracy from a 75% single-model baseline to 86.75%. When deployed to evaluate borderline or ambiguous cases, the integration of Grad-CAM heatmaps effectively transformed black-box algorithms into an explainable AI prototype, successfully highlighting the exact tissue regions that drove each diagnosis.
 
+<img src="heatmaps.png" alt="heatmapping" width="500">
+<em>Grad-CAM heatmaps reveal exactly which regions drove each prediction, turning a black box into an explainable result.</em>
+<br><br>
+<img src="datasetsAmount.png" alt="dataset quantity" width="500">
+<em>Our dataset is evenly balanced across all four classes, reducing bias toward any single diagnosis. 4,000 training images total.</em>
 
 ## Data Sources <!--- do not change this line -->
 
-(UPDATE IN README.md)
-Include any relevant data sources that were used in your project.
+*Kaggle Datasets: https://www.kaggle.com/datasets/ucimachinelearning/breast-cancer-histology-images
+<img src="Final%2018C%20Presentation%20(1).png" alt="all classes of the dataset" width="500"><br>
+<em>All Breast Histology image classes within the Kaggle dataset</em>
+<br><br>
+### Topic Research Citations <!--- do not change this line -->
 
-*EXAMPLE:*
-*Kaggle Datasets: [Link to Kaggle Dataset](https://www.kaggle.com/datasets)*
+1. American Cancer Society. [Breast Cancer Survival Rates](https://www.cancer.org/cancer/types/breast-cancer/understanding-a-breast-cancer-diagnosis/breast-cancer-survival-rates.html).
+2. World Health Organization. [Breast Cancer Inequities / Global Breast Cancer Initiative](https://www.who.int/initiatives/global-breast-cancer-initiative/breast-cancer-inequities).
+3. Lince-Deroche et al. / HEROZA (2019). [Costs of Breast Cancer Diagnostics in Johannesburg, South Africa](https://www.heroza.org/wp-content/uploads/2019/09/Lince-Deroche-et-al.-Costs-diagnostics-in-Joburg-RSA-working-paper-2019.....pdf).
+4. *Deep learning empowered breast cancer diagnosis: Advancements in detection and classification*. PLoS One. 2024 Jul 11;19(7):e0304757. doi: 10.1371/journal.pone.0304757. PMID: 38990817; PMCID: PMC11239011.
+5. National Breast Cancer Foundation. (n.d.). [Early detection of breast cancer](https://www.nationalbreastcancer.org/early-detection-of-breast-cancer/). 
+6. Jiang, B., Bao, L., He, S., Chen, X., Jin, Z., & Ye, Y. (2024). [Deep learning applications in breast cancer histopathological imaging: diagnosis, treatment, and prognosis](https://doi.org/10.1186/s13058-024-01895-6). *Breast Cancer Research*, 26, 137. 
+7. Cancer Research UK. (2026, February 13). [Why is early cancer diagnosis important?](https://www.cancerresearchuk.org/about-cancer/spot-cancer-early/why-is-early-diagnosis-important)
+8. Ekpo, E. U., Alakhras, M., & Brennan, P. (2018). [Errors in mammography cannot be solved through technology alone](https://doi.org/10.22034/APJCP.2018.19.2.291). *Asian Pacific Journal of Cancer Prevention*, 19(2), 291–301.
 
 ## Technologies Used <!--- do not change this line -->
-
-(UPDATE IN README.md)
-List the technologies, libraries, and frameworks used in your project.
-
-*EXAMPLE:*
-- *Python*
-- *pandas*
-- *OpenAI API*
-
+* **Frontend:** React
+* **Backend:** FastAPI
+* **Authentication & Services:** Supabase
+* **Machine Learning Models:** ResNet50, DenseNet121, EfficientNet-B0, and VGG16 (combined into a soft-voting ensemble)
+* **Explainable AI:** Grad-CAM heatmaps
+* **Training Framework & Hyperparameters:** ImageNet-pretrained backbones with transfer learning, optimized using AdamW and CrossEntropyLoss
 
 ## Authors <!--- do not change this line -->
-
-(UPDATE IN README.md)
-List the names and contact information (e.g., email, GitHub profiles) of the authors or contributors.
-
-*EXAMPLE:*
 *This project was completed in collaboration with:*
-- *John Doe ([john.doe@example.com](mailto:john.doe@example.com))*
-- *Jane Smith ([jane.smith@example.com](mailto:jane.smith@example.com))*
+* **Amina Kudaibergen** – [GitHub](https://github.com/laximillion) | [LinkedIn](https://www.linkedin.com/in/amina-kudaibergen-689687226/)
+  * **Allen Ramirez** – [GitHub](https://github.com/drizzyallen) | [LinkedIn](https://www.linkedin.com/in/allenram/)
+  * **Cephas Osey-Bonsu** – [GitHub](https://github.com/CephasTechOrg) | [LinkedIn](https://www.linkedin.com/in/cephas-osei-bonsu-911731326/)
+  * **Vamsi Chitturi** – [GitHub](https://github.com/vamsi-1111) | [LinkedIn](https://www.linkedin.com/in/vamsi-chitturi/)
