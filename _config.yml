@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman # do not change this line
-repository: Breast-Cancer-Detection/Breast-Cancer-Detection
 description: Amina Kudaibergen, Allen Ramirez, Cephas Osey-Bonsu, Vamsi Chitturi
+github:
+  repository_url: https://github.com/Breast-Cancer-Detection/Breast-Cancer-Detection
