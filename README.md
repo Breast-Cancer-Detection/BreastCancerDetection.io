@@ -34,12 +34,12 @@ The four-model ensemble was evaluated on a test set of **400 breast histopatholo
 | **Invasive Carcinoma** | 83.87% | 88.64% | 86.19% | 88 |
 | **Normal** | 82.40% | 98.10% | 89.57% | 105 |
 
-<img src="modelAdd.png" alt="Ensembler" width="500">
+<img src="modelAdd.png" alt="Ensembler" width="500"><br>
 <em>Combining four models raised accuracy from 75% to 86.75%, directly solving our single-model limitation.</em>
 
 <br><br>
 
-<img src="Final%2018C%20Presentation.png" alt="Confusion Matrix" width="500">
+<img src="Final%2018C%20Presentation.png" alt="Confusion Matrix" width="500"><br>
 <em>The confusion matrix shows where our deployed ensemble still struggles, guiding where expert review matters most.</em>
 
 ### Key Findings
@@ -66,10 +66,10 @@ To accomplish this, we developed a full-stack application utilizing a React fron
 | Loss | CrossEntropyLoss |
 * Engineered a soft-voting ensemble model combining four CNN architectures, which successfully elevated our classification accuracy from a 75% single-model baseline to 86.75%. When deployed to evaluate borderline or ambiguous cases, the integration of Grad-CAM heatmaps effectively transformed black-box algorithms into an explainable AI prototype, successfully highlighting the exact tissue regions that drove each diagnosis.
 
-<img src="heatmaps.png" alt="heatmapping" width="500">
+<img src="heatmaps.png" alt="heatmapping" width="500"><br>
 <em>Grad-CAM heatmaps reveal exactly which regions drove each prediction, turning a black box into an explainable result.</em>
 <br><br>
-<img src="datasetsAmount.png" alt="dataset quantity" width="500">
+<img src="datasetsAmount.png" alt="dataset quantity" width="500"><br>
 <em>Our dataset is evenly balanced across all four classes, reducing bias toward any single diagnosis. 4,000 training images total.</em>
 
 ## Data Sources <!--- do not change this line -->
@@ -99,7 +99,7 @@ To accomplish this, we developed a full-stack application utilizing a React fron
 
 ## Authors <!--- do not change this line -->
 *This project was completed in collaboration with:*
-* **Amina Kudaibergen** – [GitHub](https://github.com/laximillion) | [LinkedIn](https://www.linkedin.com/in/amina-kudaibergen-689687226/)
+  * **Amina Kudaibergen** – [GitHub](https://github.com/laximillion) | [LinkedIn](https://www.linkedin.com/in/amina-kudaibergen-689687226/)
   * **Allen Ramirez** – [GitHub](https://github.com/drizzyallen) | [LinkedIn](https://www.linkedin.com/in/allenram/)
   * **Cephas Osey-Bonsu** – [GitHub](https://github.com/CephasTechOrg) | [LinkedIn](https://www.linkedin.com/in/cephas-osei-bonsu-911731326/)
   * **Vamsi Chitturi** – [GitHub](https://github.com/vamsi-1111) | [LinkedIn](https://www.linkedin.com/in/vamsi-chitturi/)
