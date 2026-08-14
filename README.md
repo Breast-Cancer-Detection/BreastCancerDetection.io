@@ -75,6 +75,20 @@ To accomplish this, we developed a full-stack application utilizing a React fron
 <img src="datasetsAmount.png" alt="dataset quantity" width="500"><br>
 <em>Our dataset is evenly balanced across all four classes, reducing bias toward any single diagnosis. 4,000 training images total.</em>
 
+## Our App in Action <!--- do not change this line -->
+
+### Landing Page & Overview
+Explore our landing page and our mission along with model and team information.
+![introBCD.gif](introBDC.gif)
+
+### Secure Authentication
+Login or create an account to access our Model Detection!.
+![authBCD.gif](authBDC.gif)
+
+### Ensemble Prediction System
+Once authorized, you may apply the supported histology images into our 4-models-esembler system.
+![modelBCD.gif](modelBCD.gif)
+
 ## Data Sources <!--- do not change this line -->
 
 *Kaggle Datasets: https://www.kaggle.com/datasets/ucimachinelearning/breast-cancer-histology-images
