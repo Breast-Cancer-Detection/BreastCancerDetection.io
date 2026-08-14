@@ -64,6 +64,7 @@ To accomplish this, we developed a full-stack application utilizing a React fron
 | Batch Size | 16 |
 | Epochs | 8 |
 | Loss | CrossEntropyLoss |
+
 * Engineered a soft-voting ensemble model combining four CNN architectures, which successfully elevated our classification accuracy from a 75% single-model baseline to 86.75%. When deployed to evaluate borderline or ambiguous cases, the integration of Grad-CAM heatmaps effectively transformed black-box algorithms into an explainable AI prototype, successfully highlighting the exact tissue regions that drove each diagnosis.
 
 <img src="heatmaps.png" alt="heatmapping" width="500"><br>
