@@ -34,6 +34,7 @@ The four-model ensemble was evaluated on a test set of **400 breast histopatholo
 | **Invasive Carcinoma** | 83.87% | 88.64% | 86.19% | 88 |
 | **Normal** | 82.40% | 98.10% | 89.57% | 105 |
 
+![Confusion Matrix](Final%2018C%20Presentation.png)
 ### Key Findings
 
 1. **Achieved 86.75% overall accuracy** across the 400-image test set using the four-model ensemble.
